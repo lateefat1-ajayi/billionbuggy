@@ -1,0 +1,33 @@
+import { useState } from "react";
+
+export default function ProfileEditor() {
+  const [user, setUser] = useState({ name: "Alice", age: 25 });
+  const [isSaving, setIsSaving] = useState(false);
+
+  const handleNameChange = (e) => {
+    user.name = e.target.value;
+    setUser(user);
+  };
+
+  const handleSave = () => {
+    setIsSaving(true);
+    setTimeout(() => setIsSaving(false), 1000);
+  };
+
+  return (
+    <div className="p-4 bg-gray-100 rounded-lg">
+      <input
+        type="text"
+        value={user.name}
+        onChange={handleNameChange}
+        className="border p-2"
+      />
+      <button
+        onClick={handleSave}
+        className="ml-2 bg-blue-500 text-white px-4 py-2 rounded"
+      >
+        {isSaving ? "Saving..." : "Save"}
+      </button>
+    </div>
+  );
+}

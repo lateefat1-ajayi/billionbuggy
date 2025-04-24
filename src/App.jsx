@@ -1,15 +1,17 @@
-import ProfileEditor from "./components/ProfileEditor";
-import UserList from "./components/UserList";
+import Counter from "./Counter";
+import ProfileEditor from "./ProfileEditor";
+import UserList from "./UserList";
+
 
 export default function App() {
   return (
-    <div className="container mx-auto p-4">
+    <div className="flex items-center justify-center flex-col p-4 ">
       <h1 className="text-3xl font-bold mb-4">Buggy Dashboard 🐛</h1>
-      <ProfileEditor />
-      <UserList />
+      < ProfileEditor/>
+      <UserList  />
       <Counter />
 
-      <footer className="mt-8 p-4 bg-grey-500 text-white">
+      <footer className="mt-8 p-4 w-full h-24 text-center bg-gray-500 flex items-center justify-center text-white ">
         Debugging Challenge 🧠
       </footer>
     </div>
